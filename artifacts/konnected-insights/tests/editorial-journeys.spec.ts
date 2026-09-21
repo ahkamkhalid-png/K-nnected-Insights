@@ -458,6 +458,7 @@ test('the retired unsupported summit seed is not returned by the public events A
   const response = await request.get('http://127.0.0.1:8080/api/editorial?collection=events');
   expect(response.ok()).toBe(true);
   const payload = await response.json();
+  expect(Array.isArray(payload.data)).toBe(true);
   expect(payload.data).toEqual(
     expect.not.arrayContaining([
       expect.objectContaining({ slug: 'foundation-summit-2021' }),

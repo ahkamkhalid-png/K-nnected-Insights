@@ -1,4 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
+import { assertSavedSourceTestEnvironment } from '../../scripts/saved-source-test-guard.mjs';
 
 const liveNewsletter = process.env.NEWSLETTER_LIVE_AI === '1';
 const liveFutureWork = process.env.FUTURE_WORK_LIVE === '1';
@@ -6,6 +7,15 @@ const cleanupNewsletter = Boolean(process.env.NEWSLETTER_CLEANUP_RUN_ID);
 const developmentOrigin = process.env.REPLIT_DEV_DOMAIN
   ? `https://${process.env.REPLIT_DEV_DOMAIN}`
   : undefined;
+
+if (!liveNewsletter && !liveFutureWork) {
+  // Apply the same local-only DB boundary before either starting or reusing
+  // the API. Ordinary CI must never target a deployment or remote database.
+  assertSavedSourceTestEnvironment({
+    ...process.env,
+    FUTURE_WORK_PREFLIGHT_TEST_DATABASE: 'development',
+  });
+}
 
 if ((liveNewsletter || liveFutureWork) && (
   !developmentOrigin ||
@@ -70,7 +80,18 @@ export default defineConfig({
       },
     }] : []),
   ],
-  webServer: liveNewsletter || liveFutureWork ? undefined : {
+  webServer: liveNewsletter || liveFutureWork ? undefined : [{
+    command: 'pnpm --filter @workspace/api-server run test:serve',
+    env: {
+      NODE_ENV: 'development',
+      PORT: '8080',
+    },
+    // Unlike the dedicated Vite test server, the API may be managed by Replit.
+    // Playwright only tears down the process it starts, not a reused service.
+    reuseExistingServer: true,
+    timeout: 120_000,
+    url: 'http://127.0.0.1:8080/api/editorial?collection=events',
+  }, {
     command: 'pnpm run dev',
     env: {
       BASE_PATH: '/',
@@ -79,5 +100,5 @@ export default defineConfig({
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
     url: 'http://127.0.0.1:4173',
-  },
+  }],
 });

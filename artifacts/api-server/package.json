@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "test:serve": "esbuild src/test-server.ts --bundle --platform=node --format=cjs --external:pino --outfile=tmp/editorial-test-server.cjs && node tmp/editorial-test-server.cjs",
     "test:insights-chat": "esbuild src/lib/insightsChat.test.ts --bundle --platform=node --format=cjs --outfile=/tmp/insights-chat.test.cjs && node --test /tmp/insights-chat.test.cjs",
     "test:future-work-presentation": "esbuild src/lib/futureWorkPresentation.test.ts --bundle --platform=node --format=cjs --outfile=/tmp/future-work-presentation.test.cjs && NODE_ENV=production node --test /tmp/future-work-presentation.test.cjs",
     "dev": "export NODE_ENV=development && pnpm run build && pnpm run start",
