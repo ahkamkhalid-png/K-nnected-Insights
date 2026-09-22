@@ -1,8 +1,9 @@
 # GitHub source backups
 
 Destination: https://github.com/ahkamkhalid-png/K-nnected-Insights  
-Backup branch: **`source-backup`** (private repository). Existing GitHub `main`
-is preserved, including its old content and history.
+Backup branch: **`source-backup`** (private repository). The normal backup command
+does not change GitHub `main`. The separately approved history cleanup has moved
+GitHub `main` to a clean source snapshot; never restore its old internal ancestry.
 
 ## Important boundaries
 
@@ -17,8 +18,8 @@ after adding ignore rules. Never use `git push --all`, `--mirror`, or force-push
 
 The first backup commit has no parents. Later backups have only the previous
 verified clean backup as parent. Replit task branches and historical commits
-are never uploaded. Existing internal records on GitHub's old `main` are not
-removed by this procedure; deleting them from history is a separate decision.
+are never uploaded. This procedure does not purge GitHub caches, old clones
+or other references that may still contain older records.
 
 ## Repeat a backup from the main Replit workspace
 
