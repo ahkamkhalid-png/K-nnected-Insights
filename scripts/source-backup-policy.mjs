@@ -12,7 +12,7 @@ const rootFiles = new Set([
 ]);
 const docs = new Set([
   "docs/agent-monitoring-contract.md", "docs/agent-pricing-contract.md",
-  "docs/source-backup.md",
+  "docs/source-backup.md", "docs/data-recovery.md",
 ]);
 const publicTextFiles = new Set(["artifacts/konnected-insights/public/robots.txt"]);
 const extensions = /\.(?:[cm]?[jt]sx?|json|md|css|html|ya?ml|toml|sql|sh|svg|png|jpe?g|webp|gif|ico|woff2?|ttf|otf)$/i;

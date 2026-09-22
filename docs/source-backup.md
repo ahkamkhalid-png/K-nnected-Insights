@@ -6,6 +6,10 @@ is preserved, including its old content and history.
 
 ## Important boundaries
 
+Articles, editorial records, staff access and uploaded media need separate
+recovery arrangements; see the [data and media recovery plan](data-recovery.md).
+That plan requires explicit export/storage approval and an isolated restore drill.
+
 This is a **manual source backup**, not automatic synchronization or a database,
 editorial upload, deployment, or secret backup. Replit's internal `main` history
 contains agent records and uploaded prompts. **Never push it to GitHub**, even
