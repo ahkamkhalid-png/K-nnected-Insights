@@ -1,0 +1,372 @@
+{
+  "files": {
+    "inventory.json": {
+      "bytes": 1047,
+      "sha256": "15cb1a77189c601e2c6b4c06152957e0e2ca84ea00dad568a9994d6cedc98d4b"
+    },
+    "public-api.json": {
+      "bytes": 175371,
+      "sha256": "f42db0053a52e43909f27f4e268b9d86fb9a9c456270896f362e8bbba624f6f7"
+    },
+    "site/index.html": {
+      "bytes": 1185,
+      "sha256": "d100cbb7b510366ab3275aa6bafeb15a5877f1391b651cf20637e44641ca1076"
+    },
+    "site/summit-speaker.jpg": {
+      "bytes": 157663,
+      "sha256": "5292f456328c2c41a9949f07ab28d8e9363b49795c31ffb09095dbaad5c63eb6"
+    },
+    "site/summit-room.jpg": {
+      "bytes": 220127,
+      "sha256": "f2056a9c26f5b971ba4b067567ed0aedf7c917674bc20cd6727d8b3315c26d64"
+    },
+    "site/summit-networking.jpg": {
+      "bytes": 142009,
+      "sha256": "2a29524f5b86a47f100e812030c74094f9adbfdbd2d359215f9eebf2fe46fb2f"
+    },
+    "site/robots.txt": {
+      "bytes": 23,
+      "sha256": "16ceb5ee3e0dc13aa9adf31a3ebbe45a1d965b8c2b9f72eaf84e5911e140ed95"
+    },
+    "site/logo.svg": {
+      "bytes": 373,
+      "sha256": "1210340f0b54ea89d919a1ebf1ed61aa6750dbc3cd91c147c706fa3ba0ef2639"
+    },
+    "site/konsalidon-logo-white.png": {
+      "bytes": 381785,
+      "sha256": "e02b72b38b40784602ab910f1ad160ca01c731adebff72ad30cf6bf5350ee9fd"
+    },
+    "site/konsalidon-logo-black.png": {
+      "bytes": 381760,
+      "sha256": "6542e7efe0e32a6b794255bb4eb109782344d2364a7a77a3ab7c87d7fff85a07"
+    },
+    "site/konnected-insights-mark.png": {
+      "bytes": 37894,
+      "sha256": "dfdde243ba4df9cecb677e9a9bbcc43f1bd5b69b01437ec4cfc2ab380340546c"
+    },
+    "site/hero-bg_2.jpg": {
+      "bytes": 131637,
+      "sha256": "603e6bc144910d85fb59ca9714a155b747611aeafcdc6f12c2ab886062a7024b"
+    },
+    "site/hero-bg.jpg": {
+      "bytes": 105968,
+      "sha256": "8b28df7d8a564b4b8cd3d16f57545e1883100457fca8de4c993bbba48e57e0a4"
+    },
+    "site/formats.jpg": {
+      "bytes": 213377,
+      "sha256": "cd193596995f7817fe7487033f3d1b791e149522e65b24470823c260e48bce81"
+    },
+    "site/favicon.svg": {
+      "bytes": 163,
+      "sha256": "8ffbde9092b1fa4de97c9481b76f518b131268c82e7c555041925225b1dab6e0"
+    },
+    "site/curator.jpg": {
+      "bytes": 203998,
+      "sha256": "4eccbabcb68cda8ea9adbfe201fc299e5c2bc54ac03cc61bee68024ec4b8f31f"
+    },
+    "site/archive.jpg": {
+      "bytes": 230129,
+      "sha256": "c6eab2cb2f6daaecb0df41df9680943c11a956b5325969cf116b74ca16fec912"
+    },
+    "data/development.pgdump": {
+      "bytes": 5609808,
+      "sha256": "08289758266db0ac5b21617b28ed5abb6004055d557c83771b4da3d8af7b3e43"
+    },
+    "data/legacy/manifest.json": {
+      "bytes": 543,
+      "sha256": "7aad22c9ed4f7ebd5dd1da4a276a9312289f4269562ce3acade44c80cc50f4f2"
+    },
+    "data/legacy/1RieTGvaGLnxgDY5Blt8NOTdCjko3fJAa": {
+      "bytes": 429400,
+      "sha256": "b9d1db0b069e56bf95f2fff2d3baeea078fefcb34beacadc92f71bf4318ae7a4"
+    },
+    "data/legacy/1GndlKHmhqyBbMU0SmPaJqf8-b_I9wBk-": {
+      "bytes": 1899811,
+      "sha256": "cbe2bf5eb9d0cb0c3013753d404f7dc03fbef5067e5a8ed66437c3c09498949c"
+    },
+    "site/media/15fdcbea174e3d0f2be38d6e9321a6e99a3310d5350e4136493d904868db0e25.jpg": {
+      "bytes": 158771,
+      "sha256": "15fdcbea174e3d0f2be38d6e9321a6e99a3310d5350e4136493d904868db0e25"
+    },
+    "site/media/da3119ca850091959288c4d6b8c3a7fb7520bf40814f537bc09bf8cac12629f0.png": {
+      "bytes": 749425,
+      "sha256": "da3119ca850091959288c4d6b8c3a7fb7520bf40814f537bc09bf8cac12629f0"
+    },
+    "site/media/3e81629fb990ccd423617757e7a8da935f5441f8f193c10b753ca39da3c3a158.png": {
+      "bytes": 1798118,
+      "sha256": "3e81629fb990ccd423617757e7a8da935f5441f8f193c10b753ca39da3c3a158"
+    },
+    "site/media/fa025ee8dff35dd929c26e978568c793b1a5651a1986f4e549836e417ea21586.png": {
+      "bytes": 2460906,
+      "sha256": "fa025ee8dff35dd929c26e978568c793b1a5651a1986f4e549836e417ea21586"
+    },
+    "site/media/0e622ae903ff08e4df52e0444bc64ae2a2e8a15c497223edd4a5413958ef43bc.png": {
+      "bytes": 1247455,
+      "sha256": "0e622ae903ff08e4df52e0444bc64ae2a2e8a15c497223edd4a5413958ef43bc"
+    },
+    "site/media/cbe2bf5eb9d0cb0c3013753d404f7dc03fbef5067e5a8ed66437c3c09498949c.png": {
+      "bytes": 1899811,
+      "sha256": "cbe2bf5eb9d0cb0c3013753d404f7dc03fbef5067e5a8ed66437c3c09498949c"
+    },
+    "site/assets/index-C9wLghf8.js": {
+      "bytes": 1124213,
+      "sha256": "5651f81d633aca1518cfd7732f434d362dc63db0a8b30b66cf2e43df12029053"
+    },
+    "site/assets/index-DcH00Gwi.css": {
+      "bytes": 205399,
+      "sha256": "09f2c17655f72a1bb01722f90c67bfe39816fd63b725dde646809e94d526b5cc"
+    },
+    "site/original/varun-malik.jpg": {
+      "bytes": 95725,
+      "sha256": "d4436dc9cf6b9fcf9cb0b88cf6a4231d1c4a52c5c773fbb2362d55b5c45936e2"
+    },
+    "site/original/vanessa-ugatti.jpg": {
+      "bytes": 149526,
+      "sha256": "d3cf75a5531d5c125e92e09a92db0ae3a4db9b3cfe7e383871f25b6bcd796fd5"
+    },
+    "site/original/rajiv-narang.jpg": {
+      "bytes": 114575,
+      "sha256": "8f18fd55f4d80ee5d2840169d04252325f3b75013f208aa5d84c07204f053883"
+    },
+    "site/original/raj-vattikuti.jpg": {
+      "bytes": 113120,
+      "sha256": "6f6194977a36e6c33f51ad98b61afe60e354c36483b61de857007752afcc567c"
+    },
+    "site/original/previous-talks.jpg": {
+      "bytes": 385267,
+      "sha256": "ccf3dfd574003dff50f44e28669da974c564da49e1c35a51fa254a68079cb064"
+    },
+    "site/original/piers-thurston.png": {
+      "bytes": 334091,
+      "sha256": "d705f0cf78211dd680ee190b607ab9296977921d83651aec8d8ce6f584b42e83"
+    },
+    "site/original/mads-winther.jpg": {
+      "bytes": 128774,
+      "sha256": "c9e793bf7cb253b57d2c5b4b66c97b03e55b5f374e6633eacc0c93a966fd48b2"
+    },
+    "site/original/javier-velasquez.jpg": {
+      "bytes": 322667,
+      "sha256": "70e7349f04ce40abd50f33b54f0cada9040e6803efcccf29b699047b6c443ad2"
+    },
+    "site/original/herve-marchet.jpg": {
+      "bytes": 102031,
+      "sha256": "baf2a1a343b0eadbb7e68948a9ceb78ce7183ed0bb9c5d877cc612d758f5cb21"
+    },
+    "site/original/dubai-skyline.jpg": {
+      "bytes": 3691690,
+      "sha256": "dd3ef6c93708764db621583ca36f1cb1c250fd7c314f95dcb03b09cfed40d002"
+    },
+    "site/original/anne-marie-thodsen.jpg": {
+      "bytes": 109281,
+      "sha256": "f333958e2ed6eaf627d96173fb2a3f5d05feb9557068ed548f13c65643223c7b"
+    },
+    "site/editorial/SOURCES.md": {
+      "bytes": 1390,
+      "sha256": "008c44193a9ff24565054e6c922abf984c900e007e72f04b2c98dfffc893d288"
+    },
+    "site/contributors/vivaan.svg": {
+      "bytes": 699,
+      "sha256": "cc1b9a90c8a1ff0693ea22464891488b59a1ba7c520623db5755001f172a3063"
+    },
+    "site/contributors/savi.svg": {
+      "bytes": 697,
+      "sha256": "211ba0e5168bc1a9350740355403b164e779a8dd3e9c1a411d2104f6d3789609"
+    },
+    "site/contributors/pranata.svg": {
+      "bytes": 700,
+      "sha256": "589a6e595f98ac4ad9cbbc9b6c6ecbbf8d4353f654c941d2d7d52c6835e559aa"
+    },
+    "site/contributors/kuljeet.svg": {
+      "bytes": 700,
+      "sha256": "672f446cf3f2a3331c1b52e07e1357d92fc4845b10667450e94d93d3d9450563"
+    },
+    "site/contributors/chandni.svg": {
+      "bytes": 700,
+      "sha256": "304d23c3334d4b0bc9d36e10e1f290784ddb5507c37530ea0cf54d1db626334f"
+    },
+    "site/contributors/ahmed.svg": {
+      "bytes": 698,
+      "sha256": "bea9ecd696e2f78ac6e51d04a2785a6e4e5adaead9d26fa6f341398705f3ccb7"
+    },
+    "site/contributors/abdul.svg": {
+      "bytes": 698,
+      "sha256": "18ff04b0ef6d0bea14724d5d4f241252477dc2580e94b06951cbde6be07fa87e"
+    },
+    "site/communities/trust-ecosystem.jpg": {
+      "bytes": 147621,
+      "sha256": "8555f0d7889c0fe351022fef3c72c784e6ae948c528721f9daa0e58949ebb96f"
+    },
+    "site/communities/the-konsalidon-ecosystem.jpg": {
+      "bytes": 195577,
+      "sha256": "5b0999d6ef76f16341a7ad212144fe4dcdb72e29b17026dc46df22d1a7cbf4b9"
+    },
+    "site/communities/story-ecosystem.jpg": {
+      "bytes": 153871,
+      "sha256": "49cbc4ce38459aa91b2f1afe06b331226df795d9f2841be782169139e6cd75c6"
+    },
+    "site/communities/sourcing-ecosystem.jpg": {
+      "bytes": 180388,
+      "sha256": "93baedbd57d058df6ba6bfd24cf6136a76389d3919f08eae68c66cbe8988f4ff"
+    },
+    "site/communities/people-ecosystem.jpg": {
+      "bytes": 206297,
+      "sha256": "25a57ce1dfb9136eff448522f86c23d612eeeb78fda716012d6520d9f9491d92"
+    },
+    "site/communities/longevity-ecosystem.jpg": {
+      "bytes": 165045,
+      "sha256": "460420dd11e61e3e7663c576f29bde841534f0c58f19dd5e67196dbe43be6341"
+    },
+    "site/communities/industry-ecosystem.jpg": {
+      "bytes": 173631,
+      "sha256": "0b8946e0b5e6a4c8a07d751f95b3d0692aaa4fe7f22af9d01a3b3dfa7295384c"
+    },
+    "site/communities/growth-ecosystem.jpg": {
+      "bytes": 153697,
+      "sha256": "d915271268ff15ee4deaaa04be0080e397b4a993918224c3424b3cbe1ceb9685"
+    },
+    "site/communities/frontier-ecosystem.jpg": {
+      "bytes": 158527,
+      "sha256": "ebe16814b9dd7c4a178cb3fb16365ad973e81c4757098d629657cfbf8dd85a45"
+    },
+    "site/communities/foresight-ecosystem.jpg": {
+      "bytes": 145124,
+      "sha256": "0b5f7cab04030fbbea4ef6388f6b0830dec0eb26648dc64326bfecd72cb0b129"
+    },
+    "site/communities/delivery-ecosystem.jpg": {
+      "bytes": 162260,
+      "sha256": "fe3f6144b770d2f7c6e8dfd6160e44e858d8b4233413f27ecf0735e7a433f8d7"
+    },
+    "site/communities/dealflow-ecosystem.jpg": {
+      "bytes": 142447,
+      "sha256": "fb270829fca5362cbb85306ac03d0f28745e382e177d333b0b9b23b37a2524b2"
+    },
+    "site/communities/capital-ecosystem.jpg": {
+      "bytes": 171296,
+      "sha256": "e5e1bf990d6a0b7056a1496910ea6475f64ad506b8039305c72911fb7184bc87"
+    },
+    "site/editorial/sourced/when-machines-learn-to-move-physical-ai.png": {
+      "bytes": 611877,
+      "sha256": "a361b34a5642b8e3ebba721f781e7d80797cfdd596f6f61f8828883cc6ae6109"
+    },
+    "site/editorial/sourced/team-collaboration.jpg": {
+      "bytes": 382035,
+      "sha256": "f85f9cff93e5607e87bfee4f67035ca8428e8b430fef63e84aa6fabb14229a9e"
+    },
+    "site/editorial/sourced/dubai-night.jpg": {
+      "bytes": 326240,
+      "sha256": "c8749d41fcae43b86163db192f276845ed21b7dfa7b33d44b4157cdaf60065c2"
+    },
+    "site/editorial/sourced/conference-networking.jpg": {
+      "bytes": 220995,
+      "sha256": "fdeffee8ddaa31eb7599de2cd81ae790f7c14d39574fdd63a6c71ad49e093709"
+    },
+    "site/editorial/sourced/conference-conversation.jpg": {
+      "bytes": 185320,
+      "sha256": "03157cee91c4888ccf5535d69f84b4e164c879ad0cdd6f2f8c60f14956091be6"
+    },
+    "site/editorial/sourced/bitcoin-rails-unconference-dubai-2026.png": {
+      "bytes": 390132,
+      "sha256": "4a413d3a09d71134ad9b16e3cc61c527d345130cf7e97d67d24b0a963b75506b"
+    },
+    "site/editorial/portraits/vivaan.png": {
+      "bytes": 433306,
+      "sha256": "52c27162d6964898fa8667fab30d2a68c72b53e1152b9fae5070c26f7fafe935"
+    },
+    "site/editorial/portraits/vivaan-cutout.png": {
+      "bytes": 456205,
+      "sha256": "d4cd01a00f207801ee8e63fa61879bd4c9637ca99335759cf1faaf4e14863b80"
+    },
+    "site/editorial/portraits/varun-malik.png": {
+      "bytes": 379111,
+      "sha256": "e35943ad2c2c75dd7f7b75981280b8544ab22fe962c631e7fd3762deb55554f3"
+    },
+    "site/editorial/portraits/varun-malik-cutout.png": {
+      "bytes": 398877,
+      "sha256": "beadefaf072548b9db07f5124b58341a65438f25ddf1fe829a5920b581f46c2c"
+    },
+    "site/editorial/portraits/vanessa-ugatti.png": {
+      "bytes": 1025061,
+      "sha256": "6087b1131ff11f5ec1fefa5f2af7b2dd86caeca7dee90bccc650bf4ce381c6ce"
+    },
+    "site/editorial/portraits/savi.png": {
+      "bytes": 573680,
+      "sha256": "0cc065abebee423af287eb0024f00af8d1eb37e2249d55cb599921c06a86bbbc"
+    },
+    "site/editorial/portraits/savi-cutout.png": {
+      "bytes": 594111,
+      "sha256": "66a85b76ddbdb5f9db6341b0336810eafba0d6ebe99a55629c2d93554fdc25d4"
+    },
+    "site/editorial/portraits/rajiv-narang.png": {
+      "bytes": 736277,
+      "sha256": "a6ccbec13db5763170018528d9a0827d754c18e6b61373bb073f1662157ef868"
+    },
+    "site/editorial/portraits/raj-vattikuti.png": {
+      "bytes": 699228,
+      "sha256": "8ed43a44830144f3fd0db609a8b67d08f4a3ef96352a68b479b107dbdc3306d4"
+    },
+    "site/editorial/portraits/piers-thurston.png": {
+      "bytes": 304939,
+      "sha256": "f26ed09af82d788bb371548a53162a7ab21ac87cd958f762361018ff8f398724"
+    },
+    "site/editorial/portraits/mads-winther.png": {
+      "bytes": 702585,
+      "sha256": "ee9639803dfebeb4316cff9679b3a1e9dcdfe54ea88513393c6d8348a24f4f39"
+    },
+    "site/editorial/portraits/javier-velasquez.png": {
+      "bytes": 741305,
+      "sha256": "33c0f16f3b34c50202d862986112cc6b13eacaa03a9b24ef6594fb1ffbb4707e"
+    },
+    "site/editorial/portraits/herve-marchet.png": {
+      "bytes": 646367,
+      "sha256": "7a0bdbbcf5da1e73a01fb07eb40acfe863f7749260003ac22608e6e3101f8e6a"
+    },
+    "site/editorial/portraits/anne-marie-thodsen.png": {
+      "bytes": 719570,
+      "sha256": "89e2fd37d49c363e3f6b64ee4c13fd75af5d7ce077bc2eb177f0b2b92464398c"
+    },
+    "site/editorial/generated/future-work-hero.jpg": {
+      "bytes": 119969,
+      "sha256": "1bd04bbc487bc44bbd168715d6a3b880e97bd88c01d827efd3c72cca6417deda"
+    },
+    "site/editorial/generated/future-people.jpg": {
+      "bytes": 172614,
+      "sha256": "af75ae069559485ad19c232dbbf6894176673464537886c7873a5114e2e38b86"
+    },
+    "site/editorial/generated/future-finance.jpg": {
+      "bytes": 188397,
+      "sha256": "5af4f4ca66d303919d6615440afa3961932df636e016b414aaa53cbb59a2e3a1"
+    },
+    "site/editorial/generated/ai-professions.jpg": {
+      "bytes": 150634,
+      "sha256": "8df7856eaff7d3d42615c0073794821b54195b454aff366af7e2018e7f5282e3"
+    },
+    "site/images/future-work/technology-it.webp": {
+      "bytes": 81860,
+      "sha256": "5e2bc18ff203021926d3c845f9ca0658a275febd146aca3fea08504b25fb669e"
+    },
+    "site/images/future-work/sales.webp": {
+      "bytes": 50920,
+      "sha256": "1126811607005696451c303af4b685a83bd88e1a9255ba20e587b557796beebf"
+    },
+    "site/images/future-work/operations.webp": {
+      "bytes": 84176,
+      "sha256": "85b98b3193b1a043dbfe5d3f8283acdeb0827bcbfb25a20e06a327d2faab6c30"
+    },
+    "site/images/future-work/marketing.webp": {
+      "bytes": 105754,
+      "sha256": "1a39c47479cfd9ff392da44797ea6528492e5b68e1213233493dde100172d8af"
+    },
+    "site/images/future-work/hr.webp": {
+      "bytes": 65060,
+      "sha256": "c283c9da683f4c0d8dabde63d8ee5ad8e934ceda1061d9176283d65639238dbb"
+    },
+    "site/images/future-work/grc.webp": {
+      "bytes": 52476,
+      "sha256": "26807333d801ac235a8f6cb44fd523b2b98fa5dc7e63669994ebe804e9e633fe"
+    },
+    "site/images/future-work/finance.webp": {
+      "bytes": 54428,
+      "sha256": "beb98f16ea1823eccb70d7935b49521216c2d705d6b93fa1accea497c41e7fd0"
+    }
+  }
+}

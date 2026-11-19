@@ -1,0 +1,35 @@
+{
+  "source": "available development database (not verified production)",
+  "capturedUTC": "2026-11-19T10:48:54.786588+00:00",
+  "tables": {
+    "agent_manual_audit": 0,
+    "agent_operations": 257,
+    "agent_runs": 50,
+    "ai_generation_usage": 4,
+    "editorial_automation_messages": 0,
+    "editorial_automation_rules": 0,
+    "editorial_automation_runs": 0,
+    "editorial_image_assets": 3,
+    "editorial_items": 58,
+    "editorial_staff": 1,
+    "future_of_work_content": 27,
+    "future_work_decisions": 36,
+    "future_work_evidence": 268,
+    "future_work_functions": 7,
+    "future_work_news": 3,
+    "future_work_research_queue": 12,
+    "future_work_schedules": 5,
+    "leading_programs": 0,
+    "newsletter_source_runs": 0,
+    "newsletter_sources": 0,
+    "research_log": 25
+  },
+  "legacyDriveImages": 2,
+  "publishedItems": 56,
+  "draftItems": 2,
+  "intentionalOmissions": [
+    "credentials, sessions and invitation claims",
+    "provider accounts and grants",
+    "active staff identity links and automation lease tokens"
+  ]
+}
