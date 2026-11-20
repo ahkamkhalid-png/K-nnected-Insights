@@ -104,7 +104,7 @@ function StaffList() {
       <div className="bg-primary/5 border border-primary/20 rounded-sm p-3 flex items-start gap-3">
         <Info className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
         <p className="text-xs text-muted-foreground leading-relaxed">
-          An invitation email is sent to each new team member. They accept it, sign up with that exact email address, and create their own secure password.
+          An invitation email is sent to the colleague. If they already have an account with that verified address, access is active immediately. Otherwise, they must accept the invitation and verify the invited address.
         </p>
       </div>
 

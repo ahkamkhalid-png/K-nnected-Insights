@@ -87,3 +87,22 @@ test("rejects an accepted invitation for a different email", () => {
     { allowed: false, reason: "email-mismatch" },
   );
 });
+import { existingVerifiedGrantee, invitationRedirect } from './editorialInvitationClaim';
+
+test('invites return to /sign-up on the configured origin only', () => {
+  for (const origin of ['https://example.org', 'https://branch.example.org/']) {
+    assert.equal(invitationRedirect(origin), new URL('/sign-up', origin).href);
+  }
+  for (const invalid of [undefined, '', '/sign-up', 'http://example.org', 'https://a:b@example.org', 'https://example.org/konnected-insights', 'https://example.org/?a=b']) {
+    assert.equal(invitationRedirect(invalid), null);
+  }
+});
+
+test('new explicit grants bind exactly one matching verified address to its Clerk ID', () => {
+  const mk = (emailAddress: string, status: string, id = 'user_a') => ({ id, emailAddresses: [{ emailAddress, verification: { status } }] });
+  assert.equal(existingVerifiedGrantee(email, [mk(email.toUpperCase(), 'verified')]), 'user_a');
+  assert.equal(existingVerifiedGrantee(email, [mk(email, 'unverified')]), null);
+  assert.equal(existingVerifiedGrantee(email, [mk('different@example.com', 'verified')]), null);
+  assert.equal(existingVerifiedGrantee(email, [mk(email, 'verified'), mk(email, 'verified', 'user_b')]), null);
+  assert.equal(existingVerifiedGrantee(email, []), null);
+});

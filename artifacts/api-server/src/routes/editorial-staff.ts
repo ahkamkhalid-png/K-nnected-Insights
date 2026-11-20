@@ -11,7 +11,7 @@ import {
 import { asc, eq, sql } from "drizzle-orm";
 import { z } from "zod/v4";
 import { logger } from "../lib/logger";
-import { editorialInvitationMetadataKey } from "../lib/editorialInvitationClaim";
+import { editorialInvitationMetadataKey, existingVerifiedGrantee, invitationRedirect } from "../lib/editorialInvitationClaim";
 import { requireEditorialAdmin } from "../middlewares/requireEditorialStaff";
 
 const router: IRouter = Router();
@@ -101,15 +101,23 @@ router.post("/editorial/staff", requireEditorialAdmin, async (request, response)
     });
   }
 
+  const redirectUrl = invitationRedirect(process.env.PUBLIC_SITE_URL);
+  if (!redirectUrl) {
+    return response.status(503).json({
+      error: { code: "INVITATIONS_NOT_CONFIGURED", message: "Staff invitations require PUBLIC_SITE_URL to be set to this site's HTTPS origin." },
+    });
+  }
   let invitationId: string | null = null;
   try {
+    const accounts = await clerkClient.users.getUserList({ emailAddress: [input.data.email], limit: 2 });
+    const clerkUserId = accounts.totalCount === 1 ? existingVerifiedGrantee(input.data.email, accounts.data) : null;
     const invitationClaimToken = randomUUID();
     const invitation = await clerkClient.invitations.createInvitation({
       emailAddress: input.data.email,
       expiresInDays: 30,
       ignoreExisting: true,
       notify: true,
-      redirectUrl: "/konnected-insights/sign-up",
+      redirectUrl,
       publicMetadata: {
         [editorialInvitationMetadataKey]: invitationClaimToken,
       },
@@ -119,6 +127,7 @@ router.post("/editorial/staff", requireEditorialAdmin, async (request, response)
       .insert(editorialStaffTable)
       .values({
         ...input.data,
+        clerkUserId,
         clerkInvitationId: invitation.id,
         clerkInvitationExpiresAt: new Date(
           invitation.createdAt + invitationLifetimeMs,

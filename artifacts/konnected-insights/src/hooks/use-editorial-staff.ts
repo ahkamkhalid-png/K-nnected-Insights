@@ -24,11 +24,13 @@ export function useAddEditorialStaffMember() {
   return useMutation({
     mutationFn: ({ email, role }: { email: string; role: 'admin' | 'editor' }) =>
       editorialStaffApi.add(email, role),
-    onSuccess: () => {
+    onSuccess: ({ data }) => {
       queryClient.invalidateQueries({ queryKey: editorialStaffKeys.all });
       toast({
         title: 'Invitation sent',
-        description: 'They can accept the email invitation and create their own password.',
+        description: data.status === 'active'
+          ? 'Access is active. They can sign in with their existing verified account.'
+          : 'They can open the invitation and verify the invited email address.',
       });
     },
     onError: (error: Error) => {

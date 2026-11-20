@@ -18,6 +18,7 @@ Set these in the Vercel test project's settings, not in Git:
 
 | Variable | Use |
 | --- | --- |
+| `PUBLIC_SITE_URL` | Server-side HTTPS origin for invitation emails. In Preview use the branch preview origin; in Production use the published site origin. No path, query or fragment. Redeploy after changing it. Missing/invalid settings disable sending new invitations, not existing staff access. |
 | `VITE_CLERK_PUBLISHABLE_KEY` | Test Clerk publishable key for the frontend build. |
 | `CLERK_PUBLISHABLE_KEY`, `CLERK_SECRET_KEY` | Matching test Clerk tenant for the API. Configure allowed origins/redirects for the test domain. |
 | `DATABASE_URL` | Isolated PostgreSQL database, with the app schema and the data you intend to test. **Never point this preview at the live database.** |
