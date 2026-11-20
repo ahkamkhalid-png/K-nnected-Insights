@@ -11,7 +11,7 @@ import { ClerkProvider, SignIn, SignUp, Show, useClerk, UserButton } from '@cler
 import { publishableKeyFromHost } from '@clerk/react/internal';
 import { dark } from '@clerk/themes';
 import { Button } from '@/components/ui/button';
-import { ShieldAlert } from 'lucide-react';
+import { ArrowLeft, ShieldAlert } from 'lucide-react';
 import { useEditorialAccess } from '@/hooks/use-access';
 
 // Pages
@@ -116,19 +116,33 @@ const clerkAppearance = {
   },
 };
 
+function StaffAuthLayout({ children }: { children: ReactNode }) {
+  return (
+    <main className="flex min-h-[100dvh] flex-col items-center justify-center bg-background px-4 py-8 cinematic-vignette">
+      <div className="w-full max-w-[440px]">
+        <Link href="/" className="mb-3 inline-flex min-h-11 items-center gap-2 rounded-sm bg-background px-4 text-sm font-medium text-foreground underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">
+          <ArrowLeft aria-hidden="true" className="h-4 w-4" />
+          Back to website
+        </Link>
+        {children}
+      </div>
+    </main>
+  );
+}
+
 function SignInPage() {
   return (
-    <div className="flex min-h-[100dvh] items-center justify-center bg-background px-4 cinematic-vignette">
+    <StaffAuthLayout>
       <SignIn routing="path" path={`${basePath}/sign-in`} forceRedirectUrl={`${basePath}/admin`} />
-    </div>
+    </StaffAuthLayout>
   );
 }
 
 function SignUpPage() {
   return (
-    <div className="flex min-h-[100dvh] items-center justify-center bg-background px-4 cinematic-vignette">
+    <StaffAuthLayout>
       <SignUp routing="path" path={`${basePath}/sign-up`} forceRedirectUrl={`${basePath}/admin`} />
-    </div>
+    </StaffAuthLayout>
   );
 }
 
