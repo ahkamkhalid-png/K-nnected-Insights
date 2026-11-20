@@ -304,7 +304,7 @@ export default function AdminFutureWork() {
     staleTime: 10_000,
     refetchInterval: ({ state }) => {
       const data = state.data as AdminFutureWorkData | undefined;
-      return data?.runs.some(run => run.status === 'running' || run.status === 'queued') ? 4_000 : 30_000;
+      return data?.runs.some(run => run.status === 'running' || run.status === 'queued') ? 10_000 : false;
     },
     refetchOnWindowFocus: true,
   });

@@ -12,8 +12,8 @@ export function useFutureWorkOverview() {
   return useQuery({
     queryKey: futureWorkKeys.overview(),
     queryFn: () => futureWorkApi.getOverview().then(res => res.data),
-    staleTime: 30_000,
-    refetchInterval: 60_000,
+    staleTime: 5 * 60_000,
+    refetchInterval: false,
     refetchOnWindowFocus: true,
     retry: false,
   });
@@ -23,8 +23,8 @@ export function useFutureWorkFreshness() {
   return useQuery({
     queryKey: futureWorkKeys.freshness(),
     queryFn: () => futureWorkApi.getFreshness().then(res => res.data),
-    staleTime: 30_000,
-    refetchInterval: 60_000,
+    staleTime: 5 * 60_000,
+    refetchInterval: false,
     refetchOnWindowFocus: true,
     retry: false,
   });
@@ -34,8 +34,8 @@ export function useFutureWorkFunction(slug: string) {
   return useQuery({
     queryKey: futureWorkKeys.function(slug),
     queryFn: () => futureWorkApi.getFunction(slug).then(res => res.data),
-    staleTime: 30_000,
-    refetchInterval: 60_000,
+    staleTime: 5 * 60_000,
+    refetchInterval: false,
     refetchOnWindowFocus: true,
     retry: false,
     enabled: !!slug,

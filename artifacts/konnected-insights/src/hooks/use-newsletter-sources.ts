@@ -12,10 +12,10 @@ export function useNewsletterSources() {
   return useQuery({
     queryKey: newsletterSourcesKeys.all,
     queryFn: () => newsletterSourcesApi.list(),
-    // Poll fast if there is a running task, otherwise 30s to catch scheduled background runs
+    // Refresh only while a run is active; idle tabs should not wake the database.
     refetchInterval: (query) => {
       const hasRunning = query.state.data?.sources.some(s => s.lastRun?.status === 'running');
-      return hasRunning ? 2000 : 30000;
+      return hasRunning ? 10_000 : false;
     },
     staleTime: 10000,
   });

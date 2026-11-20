@@ -50,21 +50,15 @@ export default function Home() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
-  const { data: newslettersData } = useEditorialItems('newsletters');
-  const { data: masterclassesData } = useEditorialItems('masterclasses');
-  const { data: fowData } = useEditorialItems('future-work');
-  const { data: contributorsData } = useEditorialItems('contributors');
-  const { data: communitiesData } = useEditorialItems('communities');
-  const { data: eventsData } = useEditorialItems('events');
-  const { data: talksData } = useEditorialItems('talks');
-
-  const newsletters = newslettersData ?? [];
-  const masterclasses = masterclassesData ?? [];
-  const futureWork = fowData ?? [];
-  const contributors = contributorsData ?? [];
-  const communities = communitiesData ?? [];
-  const events = eventsData ?? [];
-  const talks = talksData ?? [];
+  // The public endpoint already returns all published collections in display order.
+  const { data: published } = useEditorialItems();
+  const newsletters = published?.filter(item => item.collection === 'newsletters') ?? [];
+  const masterclasses = published?.filter(item => item.collection === 'masterclasses') ?? [];
+  const futureWork = published?.filter(item => item.collection === 'future-work') ?? [];
+  const contributors = published?.filter(item => item.collection === 'contributors') ?? [];
+  const communities = published?.filter(item => item.collection === 'communities') ?? [];
+  const events = published?.filter(item => item.collection === 'events') ?? [];
+  const talks = published?.filter(item => item.collection === 'talks') ?? [];
   const topMasterclasses = masterclasses.slice(0, 3);
   const [activeMasterclassSlug, setActiveMasterclassSlug] = React.useState('');
   const activeMasterclass = topMasterclasses.find((item) => item.slug === activeMasterclassSlug) ?? topMasterclasses[0];

@@ -153,7 +153,7 @@ test('homepage previews each editorial collection and interactive previews are o
 });
 
 test('homepage keeps its single featured event compact and responsive', async ({ page }) => {
-  await page.route('**/api/editorial?collection=events', async (route) => {
+  await page.route('**/api/editorial', async (route) => {
     await route.fulfill({
       json: {
         data: [{
@@ -218,7 +218,7 @@ test('homepage keeps its single featured event compact and responsive', async ({
 });
 
 test('homepage keeps the no-event placeholder compact and contained', async ({ page }) => {
-  await page.route('**/api/editorial?collection=events', async (route) => {
+  await page.route('**/api/editorial', async (route) => {
     await route.fulfill({ json: { data: [] } });
   });
 

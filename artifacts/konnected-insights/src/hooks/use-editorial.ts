@@ -12,7 +12,14 @@ export const editorialKeys = {
 };
 
 export function useEditorialItems(collection?: string, includeDrafts?: boolean) {
+  const client = useQueryClient();
+  const snapshot = !includeDrafts && collection
+    ? client.getQueryState<EditorialItem[]>(editorialKeys.list()) : undefined;
   return useQuery({
+    // Reuse only published rows. Preserve their fetch time; never seed staff queries.
+    initialData: () => snapshot?.isInvalidated ? undefined : snapshot?.data?.filter(item => item.collection === collection),
+    initialDataUpdatedAt: snapshot?.dataUpdatedAt,
+    staleTime: includeDrafts ? 0 : 5 * 60_000,
     queryKey: editorialKeys.list(collection, includeDrafts),
     queryFn: () => editorialApi.list(collection, includeDrafts).then(res => res.data),
   });
@@ -23,6 +30,7 @@ export function useEditorialItem(collection: string, slug: string, includeDrafts
     queryKey: editorialKeys.detail(collection, slug, includeDrafts),
     queryFn: () => editorialApi.get(collection, slug, includeDrafts).then(res => res.data),
     enabled: !!collection && !!slug,
+    staleTime: includeDrafts ? 0 : 5 * 60_000,
   });
 }
 
@@ -155,7 +163,7 @@ export function useLinkedInIngestionStatus() {
   return useQuery({
     queryKey: editorialKeys.linkedInIngestion(),
     queryFn: () => editorialApi.linkedInIngestionStatus().then((response) => response.data),
-    refetchInterval: (query) => query.state.data?.lastRun?.status === 'running' ? 2_000 : 60_000,
+    refetchInterval: (query) => query.state.data?.lastRun?.status === 'running' ? 10_000 : false,
   });
 }
 

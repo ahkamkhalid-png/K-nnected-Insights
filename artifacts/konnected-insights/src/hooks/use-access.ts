@@ -10,8 +10,8 @@ export function useEditorialAccess() {
     queryFn: async () => (await editorialApi.access()).data,
     enabled: !!isSignedIn,
     retry: false,
-    staleTime: 0,
+    staleTime: 60_000,
     refetchOnWindowFocus: true,
-    refetchInterval: 15_000,
+    refetchInterval: false,
   });
 }
