@@ -14,7 +14,7 @@ export function AutomationRunsDialog({
   onOpenChange: (open: boolean) => void;
 }) {
   const { data: runs, isLoading } = useAutomationRuns(ruleId || '', { 
-    refetchInterval: open ? 3000 : undefined 
+    refetchInterval: open ? 10_000 : undefined
   });
 
   return (
@@ -23,7 +23,7 @@ export function AutomationRunsDialog({
         <DialogHeader>
           <DialogTitle>Recent Automation Runs</DialogTitle>
           <DialogDescription>
-            History of execution for this rule. Automatically refreshes while open.
+            History of execution for this rule. Refreshes while a run is active.
           </DialogDescription>
         </DialogHeader>
 

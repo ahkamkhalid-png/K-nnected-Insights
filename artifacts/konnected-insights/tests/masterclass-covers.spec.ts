@@ -49,6 +49,7 @@ async function setupMasterclassFixtures(page: Page, width: number) {
       body: `<svg xmlns="http://www.w3.org/2000/svg" width="${shape.width}" height="${shape.height}"><rect x="2" y="2" width="${shape.width - 4}" height="${shape.height - 4}" fill="#ded8ed" stroke="#36274e" stroke-width="4"/><text x="10" y="30">Top edge</text><text x="10" y="${shape.height - 10}">Bottom edge</text></svg>`,
     });
   });
+  await page.route('**/api/editorial', route => route.fulfill({ json: { data: items } }));
   await page.route('**/api/editorial?collection=masterclasses', route =>
     route.fulfill({ json: { data: items } }));
   await page.route('**/api/editorial/masterclasses/*', route =>
@@ -71,6 +72,7 @@ for (const width of [390, 1440]) {
       contentType: 'image/svg+xml',
       body: '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400"><rect width="600" height="400" fill="#ded8ed"/></svg>',
     }));
+    await page.route('**/api/editorial', route => route.fulfill({ json: { data: cards.map(card => ({ ...card, collection: 'newsletters' })) } }));
     await page.route('**/api/editorial?collection=*', route => {
       const collection = new URL(route.request().url()).searchParams.get('collection');
       return route.fulfill({ json: { data: ['newsletters', 'future-work'].includes(collection!) ? cards : [] } });

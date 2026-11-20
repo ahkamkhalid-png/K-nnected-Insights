@@ -18,7 +18,7 @@ export function useAutomationRules() {
   const query = useQuery({
     queryKey: ['editorial-automation-rules'],
     queryFn: async () => (await editorialAutomationApi.getRules()).data,
-    refetchInterval: 15000,
+    refetchInterval: false,
     staleTime: 30000,
   });
 
@@ -127,7 +127,7 @@ export function useAutomationRuns(ruleId: string, options?: { refetchInterval?: 
     queryKey: ['editorial-automation-runs', ruleId],
     queryFn: async () => (await editorialAutomationApi.getRuns(ruleId)).data,
     enabled: !!ruleId,
-    refetchInterval: options?.refetchInterval,
+    refetchInterval: ({ state }) => state.data?.some(run => run.status === 'running') ? (options?.refetchInterval ?? false) : false,
   });
 
   useEffect(() => {
