@@ -11,7 +11,7 @@ import { Footer } from '@/components/footer';
 import { Metadata } from '@/components/metadata';
 import { AnimatedSection } from '@/components/animated-section';
 import { useEditorialItems } from '@/hooks/use-editorial';
-import { FALLBACK_DATA } from '@/lib/editorial-fallbacks';
+import { HomepagePlaceholders } from '@/components/homepage-placeholders';
 import { resolveContributorPortrait } from '@/lib/contributor-content';
 import {
   formatEventDateTime,
@@ -58,25 +58,26 @@ export default function Home() {
   const { data: eventsData } = useEditorialItems('events');
   const { data: talksData } = useEditorialItems('talks');
 
-  const newsletters = newslettersData ?? FALLBACK_DATA.newsletters;
-  const masterclasses = masterclassesData ?? FALLBACK_DATA.masterclasses;
-  const futureWork = fowData ?? FALLBACK_DATA['future-work'];
+  const newsletters = newslettersData ?? [];
+  const masterclasses = masterclassesData ?? [];
+  const futureWork = fowData ?? [];
   const contributors = contributorsData ?? [];
-  const communities = communitiesData ?? FALLBACK_DATA.communities;
-  const events = eventsData ?? FALLBACK_DATA.events;
-  const talks = talksData ?? FALLBACK_DATA.talks;
+  const communities = communitiesData ?? [];
+  const events = eventsData ?? [];
+  const talks = talksData ?? [];
   const topMasterclasses = masterclasses.slice(0, 3);
   const [activeMasterclassSlug, setActiveMasterclassSlug] = React.useState('');
   const activeMasterclass = topMasterclasses.find((item) => item.slug === activeMasterclassSlug) ?? topMasterclasses[0];
-  const featuredUpcomingEvent = React.useMemo(() => {
+  const upcomingEvents = React.useMemo(() => {
     return ([...events] as PublicEvent[])
       .filter((event) => getEventState(event.data) === 'upcoming')
       .sort((a, b) => {
         const startA = a.data.startAt ? new Date(a.data.startAt).getTime() : Number.POSITIVE_INFINITY;
         const startB = b.data.startAt ? new Date(b.data.startAt).getTime() : Number.POSITIVE_INFINITY;
         return startA - startB;
-      })[0];
+      });
   }, [events]);
+  const featuredUpcomingEvent = upcomingEvents[0];
   const coreTeam = contributors.filter(item => item.data.group === 'Core Team').slice(0, 3);
   const [activeCoreSlug, setActiveCoreSlug] = React.useState('savi');
   const activeCoreMember = coreTeam.find(item => item.slug === activeCoreSlug) ?? coreTeam[0];
@@ -316,6 +317,7 @@ export default function Home() {
               </div>
             </div>
           )}
+          {masterclasses.length < 3 && (<div className="mt-6 grid gap-4 sm:grid-cols-3"><HomepagePlaceholders section="masterclasses" count={masterclasses.length} /></div>)}
         </div>
       </section>
 
@@ -371,6 +373,7 @@ export default function Home() {
                 </Link>
               </AnimatedSection>
             ))}
+            <HomepagePlaceholders section="research" count={futureWork.length} />
           </div>
         </div>
       </section>
@@ -395,10 +398,10 @@ export default function Home() {
         </div>
 
         <div className="pl-6 md:pl-12 ml-auto lg:pl-[calc(50vw-32rem)] 2xl:pl-[calc(50vw-40rem)] relative">
-          <Carousel opts={{ align: "start", dragFree: true }} className="w-full" aria-label="Newsletter dispatches">
-            <CarouselContent className="-ml-6">
+          <Carousel opts={{ align: "start", dragFree: true, active: newsletters.length >= 3 }} className="w-full" aria-label="Newsletter dispatches">
+            <CarouselContent className={newsletters.length < 3 ? "ml-0 mr-6 grid gap-4 md:mr-12 md:grid-cols-3" : "-ml-6"}>
               {newsletters.slice(0, 6).map((item, i) => (
-                <CarouselItem key={item.slug} className="pl-6 basis-[85%] sm:basis-[60%] md:basis-[45%] lg:basis-[30%]">
+                <CarouselItem key={item.slug} className={newsletters.length < 3 ? "pl-0" : "pl-6 basis-[85%] sm:basis-[60%] md:basis-[45%] lg:basis-[30%]"}>
                   <OptionalExternalLink href={item.data.url} target="_blank" rel="noopener noreferrer" data-testid={`link-newsletter-${item.slug}`} className="block h-full group">
                     {i === 0 ? (
                       <div className="h-full min-h-[400px] p-8 md:p-10 rounded-xl bg-gradient-to-br from-primary to-accent text-primary-foreground flex flex-col justify-between relative overflow-hidden transition-transform group-hover:scale-[1.02]">
@@ -466,11 +469,12 @@ export default function Home() {
                   </OptionalExternalLink>
                 </CarouselItem>
               ))}
+              <HomepagePlaceholders section="newsletters" count={newsletters.length} />
             </CarouselContent>
-            <div className="container px-6 md:px-12 mx-auto mt-12 flex items-center gap-4 justify-end">
+            {newsletters.length >= 3 && <div className="container px-6 md:px-12 mx-auto mt-12 flex items-center gap-4 justify-end">
               <CarouselPrevious data-testid="button-newsletters-previous" className="relative inset-auto translate-x-0 translate-y-0 h-12 w-12 rounded-full border border-border bg-card hover:bg-muted text-foreground flex items-center justify-center" />
               <CarouselNext data-testid="button-newsletters-next" className="relative inset-auto translate-x-0 translate-y-0 h-12 w-12 rounded-full border border-border bg-card hover:bg-muted text-foreground flex items-center justify-center" />
-            </div>
+            </div>}
           </Carousel>
         </div>
       </section>
@@ -575,6 +579,7 @@ export default function Home() {
             </AnimatedSection>
           </div>
           )}
+          {coreTeam.length > 0 && coreTeam.length < 3 && (<div className="mt-6 grid gap-4 sm:grid-cols-3"><HomepagePlaceholders section="team" count={coreTeam.length} /></div>)}
         </div>
       </section>
 
@@ -615,6 +620,7 @@ export default function Home() {
                 </OptionalExternalLink>
               </AnimatedSection>
             ))}
+            <HomepagePlaceholders section="communities" count={communities.length} />
           </div>
         </div>
       </section>
@@ -689,6 +695,10 @@ export default function Home() {
                 </div>
               </AnimatedSection>
             )}
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+              {upcomingEvents.slice(1, 3).map(event => <Link key={event.slug} href={`/events/${event.slug}`} className="rounded-sm border border-border bg-card/40 p-6 hover:border-primary"><p className="mb-2 text-xs text-primary">{formatEventDateTime(event.data)}</p><span className="font-display text-xl">{event.title}</span></Link>)}
+              <HomepagePlaceholders section="events" count={Math.max(1, upcomingEvents.length)} />
+            </div>
           </div>
         </div>
       </section>
@@ -718,6 +728,7 @@ export default function Home() {
                   </Link>
                 </AnimatedSection>
               ))}
+            <HomepagePlaceholders section="talks" count={talks.length} />
           </div>
         </div>
       </section>
