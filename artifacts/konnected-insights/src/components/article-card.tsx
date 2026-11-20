@@ -1,3 +1,4 @@
+import { EditorialImage } from '@/components/editorial-image';
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
@@ -52,7 +53,7 @@ export function ArticleCard({ title, excerpt, image, category, author, href, isE
         {author?.name && (
           <div className="flex items-center gap-4 mt-auto pt-6 border-t border-border/50">
             {author.image ? (
-              <img src={author.image} alt={author.name} className="h-10 w-10 object-cover transition-all duration-500" />
+              <EditorialImage portrait src={author.image} alt={author.name} className="h-10 w-10 object-cover transition-all duration-500" />
             ) : (
               <div className="h-10 w-10 bg-muted flex items-center justify-center text-muted-foreground text-sm font-display italic">
                 {author.name.charAt(0)}

@@ -1,3 +1,4 @@
+import { EditorialImage } from '@/components/editorial-image';
 import React from 'react';
 import { CoverPhoto } from '@/components/cover-photo';
 import { Navbar } from '@/components/navbar';
@@ -63,7 +64,7 @@ export default function MasterclassSeries() {
 
                       {mc.author?.name && <div className="flex items-center gap-4 mt-auto pt-6 border-t border-border/50">
                         {mc.author.image ? (
-                          <img src={mc.author.image} alt={mc.author.name} className="h-10 w-10 object-cover transition-all duration-500" />
+                          <EditorialImage portrait src={mc.author.image} alt={mc.author.name} className="h-10 w-10 object-cover transition-all duration-500" />
                         ) : (
                           <div className="h-10 w-10 bg-muted flex items-center justify-center text-muted-foreground text-sm font-display italic">
                             {mc.author.name.charAt(0)}

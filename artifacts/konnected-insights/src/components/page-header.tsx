@@ -1,3 +1,4 @@
+import { EditorialImage } from '@/components/editorial-image';
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 
@@ -18,7 +19,7 @@ export function PageHeader({ title, subtitle, category, align = 'center', dark =
 
       {image && (
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <img src={image} alt="" className={`w-full h-full object-cover scale-105 ${dark ? 'opacity-20 mix-blend-luminosity' : 'opacity-[0.32] mix-blend-multiply saturate-125 contrast-110'}`} />
+          <EditorialImage src={image} alt="" className={`w-full h-full object-cover scale-105 ${dark ? 'opacity-20 mix-blend-luminosity' : 'opacity-[0.32] mix-blend-multiply saturate-125 contrast-110'}`} />
           <div className={`absolute inset-0 bg-gradient-to-b ${dark ? 'from-transparent to-[#0A0B10]' : 'from-background/5 via-background/20 to-background/70'}`} />
         </div>
       )}

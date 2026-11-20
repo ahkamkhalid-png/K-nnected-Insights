@@ -31,7 +31,7 @@ export function ContributorCard({
   return (
     <AnimatedSection delay={delay} className="group flex flex-col h-full w-full max-w-[300px] text-left">
       <Link href={href} className="block outline-none focus-visible:ring-2 ring-primary ring-offset-background">
-        <CoverPhoto src={coverImage} generated={imageProvenance === 'ai-generated-representative-artwork'} omitWhenUnavailable className="mb-3 aspect-video" />
+        <CoverPhoto src={coverImage} generated={imageProvenance === 'ai-generated-representative-artwork'} className="mb-3 aspect-video" />
         <ContributorPortrait
           name={name}
           image={cutoutImage}

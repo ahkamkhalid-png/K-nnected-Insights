@@ -65,7 +65,7 @@ export default function ContributorDetail() {
       <Navbar />
 
       <main className="flex-grow pt-32 pb-32">
-        <CoverPhoto src={contributor.coverImage} generated={contributor.imageProvenance === 'ai-generated-representative-artwork'} omitWhenUnavailable className="mx-auto mb-12 aspect-[21/9] w-full max-w-6xl" />
+        <CoverPhoto src={contributor.coverImage} generated={contributor.imageProvenance === 'ai-generated-representative-artwork'} className="mx-auto mb-12 aspect-[21/9] w-full max-w-6xl" />
         <div className="absolute top-0 right-0 w-[600px] h-[600px] glow-orb-accent opacity-10 pointer-events-none mix-blend-multiply blur-[100px]" />
 
         <section className="container px-6 md:px-12 mx-auto max-w-6xl relative z-10">

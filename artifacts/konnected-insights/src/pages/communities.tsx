@@ -1,3 +1,4 @@
+import { EditorialImage } from '@/components/editorial-image';
 import React from 'react';
 import { CommunityCover } from '@/components/community-cover';
 import { OptionalExternalLink } from '@/components/optional-external-link';
@@ -43,7 +44,7 @@ export default function Communities() {
         </div>
 
         <AnimatedSection direction="none" className="relative h-[50vh] min-h-[400px] overflow-hidden border-y border-border">
-          <img
+          <EditorialImage
             src="/editorial/sourced/conference-networking.jpg"
             alt="Professionals connecting during a business gathering"
             className="absolute inset-0 w-full h-full object-cover transition-all duration-[2000ms]"

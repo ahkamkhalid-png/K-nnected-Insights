@@ -1,3 +1,4 @@
+import { EditorialImage } from '@/components/editorial-image';
 import React, { useState, useEffect, useRef } from 'react';
 import { useRoute, useSearch } from 'wouter';
 import { useFutureWorkFunction } from '@/hooks/use-future-work';
@@ -254,7 +255,7 @@ export default function FutureOfWorkFunctionPage() {
       <div className="dark bg-background text-foreground relative pt-32 pb-24 md:pt-48 md:pb-32 overflow-hidden border-b border-border">
         {heroCoverUrl ? (
           <div className="absolute inset-0 z-0">
-            <img src={heroCoverUrl} alt={heroAlt} className="w-full h-full object-cover" />
+            <EditorialImage src={heroCoverUrl} alt={heroAlt} className="w-full h-full object-cover" />
             <div className="absolute inset-0 cinematic-overlay"></div>
           </div>
         ) : (

@@ -1,3 +1,4 @@
+import { EditorialImage } from '@/components/editorial-image';
 interface ContributorPortraitProps {
   name: string;
   image?: string;
@@ -18,7 +19,7 @@ export function ContributorPortrait({
       className={`relative isolate overflow-hidden aspect-[4/5] bg-transparent ${className}`}
     >
       {image ? (
-        <img
+        <EditorialImage portrait
           src={image}
           alt={name}
           className={`absolute inset-0 z-10 h-full w-full object-contain object-bottom drop-shadow-[0_12px_18px_rgba(50,34,80,0.12)] transition-transform duration-700 ease-out ${imageClassName}`}

@@ -1,3 +1,4 @@
+import { EditorialImage } from '@/components/editorial-image';
 import React from 'react';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
@@ -64,7 +65,7 @@ export default function BiggerPicture() {
                       "Our mission is to orchestrate collisions between the minds building the future. This is a catalyst for our next exponential leap."
                     </p>
                     <div className="flex items-center gap-6 relative z-10">
-                      <img src="/original/varun-malik.jpg" alt="Varun Malik" className="w-16 h-16 object-cover border border-white/20 shadow-lg" />
+                      <EditorialImage portrait src="/original/varun-malik.jpg" alt="Varun Malik" className="w-16 h-16 object-cover border border-white/20 shadow-lg" />
                       <div>
                         <div className="text-sm tracking-widest uppercase font-medium text-white mb-1">Varun Malik</div>
                         <div className="text-[10px] text-white/50 uppercase tracking-[0.2em]">Advisor</div>
@@ -72,7 +73,7 @@ export default function BiggerPicture() {
                     </div>
                     {/* Background abstract graphic */}
                     <div className="absolute inset-0 z-0 opacity-20 mix-blend-screen pointer-events-none">
-                       <img src="/editorial/generated/future-people.jpg" alt="" className="w-full h-full object-cover" />
+                       <EditorialImage src="/editorial/generated/future-people.jpg" alt="" className="w-full h-full object-cover" />
                     </div>
                     <div className="absolute inset-0 cinematic-vignette opacity-80 pointer-events-none" />
                   </div>

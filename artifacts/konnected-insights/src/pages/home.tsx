@@ -1,3 +1,4 @@
+import { EditorialImage } from '@/components/editorial-image';
 import React, { useRef } from 'react';
 import { CoverPhoto } from '@/components/cover-photo';
 import { CommunityCover } from '@/components/community-cover';
@@ -96,7 +97,7 @@ export default function Home() {
           <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] glow-orb-primary blur-[120px] rounded-full mix-blend-screen opacity-70" />
           <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] glow-orb-accent blur-[120px] rounded-full mix-blend-screen opacity-60" />
 
-          <img
+          <EditorialImage
             src="/editorial/generated/future-work-hero.jpg"
             alt="Conceptual visualization of the future of work in Dubai"
             className="w-full h-full object-cover opacity-60"
@@ -232,7 +233,7 @@ export default function Home() {
                           <div className="flex items-center justify-between border-t border-border/50 pt-6 mt-auto">
                             {activeMasterclass.data.author?.name && <div className="flex items-center gap-3">
                               {activeMasterclass.data.author?.image ? (
-                                <img src={activeMasterclass.data.author.image} alt={activeMasterclass.data.author.name} className="w-10 h-10 rounded-full object-cover grayscale" />
+                                <EditorialImage portrait src={activeMasterclass.data.author.image} alt={activeMasterclass.data.author.name} className="w-10 h-10 rounded-full object-cover grayscale" />
                               ) : (
                                 <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-sm font-display italic text-muted-foreground border border-border">
                                   {activeMasterclass.data.author?.name?.[0] || 'A'}
@@ -401,13 +402,10 @@ export default function Home() {
                   <OptionalExternalLink href={item.data.url} target="_blank" rel="noopener noreferrer" data-testid={`link-newsletter-${item.slug}`} className="block h-full group">
                     {i === 0 ? (
                       <div className="h-full min-h-[400px] p-8 md:p-10 rounded-xl bg-gradient-to-br from-primary to-accent text-primary-foreground flex flex-col justify-between relative overflow-hidden transition-transform group-hover:scale-[1.02]">
-                        {item.data.image && (
-                          <img src={item.data.image} alt="" className="absolute inset-0 h-full w-full object-cover opacity-20 mix-blend-overlay transition-transform duration-700 group-hover:scale-105" />
-                        )}
+                        <EditorialImage src={item.data.image} alt="" className="absolute inset-0 h-full w-full object-cover opacity-20 mix-blend-overlay transition-transform duration-700 group-hover:scale-105" />
                         <div className="absolute inset-0 bg-gradient-to-b from-primary/20 via-primary/70 to-accent/95 pointer-events-none" />
                         <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 blur-[60px] rounded-full mix-blend-screen pointer-events-none" />
                         <div className="relative z-10">
-                          {!item.data.image && <p className="mb-3 text-xs">No cover photo</p>}
                           <div className="mb-6 inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/20 backdrop-blur-md">
                             <BookOpen className="w-5 h-5 text-white" />
                           </div>
@@ -419,7 +417,7 @@ export default function Home() {
                           {item.data.author?.name && (
                             <div className="flex items-center gap-3 min-w-0">
                               {item.data.author.image ? (
-                                <img src={item.data.author.image} alt={item.data.author.name} className="w-8 h-8 rounded-full object-cover border border-white/30" />
+                                <EditorialImage portrait src={item.data.author.image} alt={item.data.author.name} className="w-8 h-8 rounded-full object-cover border border-white/30" />
                               ) : (
                                 <div className="w-8 h-8 rounded-full bg-white/15 flex items-center justify-center text-xs font-display italic">
                                   {item.data.author.name[0]}
@@ -436,14 +434,11 @@ export default function Home() {
                     ) : (
                       <div className="h-full min-h-[400px] p-8 md:p-10 rounded-xl bg-card border border-border flex flex-col justify-between transition-all group-hover:border-primary/50 group-hover:shadow-[0_8px_30px_rgba(104,87,153,0.08)] group-hover:-translate-y-1">
                         <div>
-                          {!item.data.image && <p className="mb-3 text-xs text-muted-foreground">No cover photo</p>}
                           <div className="mb-6 flex items-center justify-between gap-4">
                             <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-muted border border-border">
                               <BookOpen className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
                             </div>
-                            {item.data.image && (
-                              <img src={item.data.image} alt="" className="w-20 h-14 object-cover rounded-sm opacity-80 transition-all duration-500 group-hover:opacity-100 group-hover:scale-105" />
-                            )}
+                            <EditorialImage src={item.data.image} alt="" className="w-20 h-14 object-cover rounded-sm opacity-80 transition-all duration-500 group-hover:opacity-100 group-hover:scale-105" />
                           </div>
                           <p className="text-muted-foreground text-[10px] tracking-widest uppercase mb-4">{item.data.category || 'Newsletter'}</p>
                           <h4 className="text-2xl md:text-3xl font-display leading-tight mb-4 text-foreground group-hover:text-primary transition-colors">{item.title}</h4>
@@ -453,7 +448,7 @@ export default function Home() {
                           {item.data.author?.name && (
                             <div className="flex items-center gap-3">
                               {item.data.author.image ? (
-                                <img src={item.data.author.image} alt={item.data.author.name} className="w-8 h-8 rounded-full object-cover grayscale" />
+                                <EditorialImage portrait src={item.data.author.image} alt={item.data.author.name} className="w-8 h-8 rounded-full object-cover grayscale" />
                               ) : (
                                 <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center text-xs font-display italic text-muted-foreground border border-border">
                                   {item.data.author.name[0]}
@@ -532,13 +527,11 @@ export default function Home() {
                         <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{description}</p>
                       </div>
                       <ArrowRight className="hidden h-5 w-5 text-muted-foreground transition-all group-hover:translate-x-1 group-hover:text-primary md:block" />
-                      {portrait && (
-                        <img
+                      <EditorialImage portrait
                           src={portrait}
                           alt=""
                           className="absolute bottom-0 right-0 h-36 w-28 object-contain object-bottom lg:hidden"
                         />
-                      )}
                     </Link>
                   </AnimatedSection>
                 );
@@ -552,7 +545,7 @@ export default function Home() {
                   className="group relative flex h-full w-full items-end justify-center outline-none focus-visible:ring-2 focus-visible:ring-primary"
                   aria-label={`View ${activeCoreMember.data.name || activeCoreMember.title}'s profile`}
                 >
-                  <motion.img
+                  <EditorialImage portrait
                     key={activeCoreMember.slug}
                     src={resolveContributorPortrait({
                       slug: activeCoreMember.slug,
@@ -560,9 +553,6 @@ export default function Home() {
                       isPlaceholder: activeCoreMember.data.isPlaceholder,
                     })}
                     alt={activeCoreMember.data.name || activeCoreMember.title}
-                    initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: reduceMotion ? 0 : 0.3, ease: 'easeOut' }}
                     className="relative z-10 max-h-[380px] w-full object-contain object-bottom transition-transform duration-500 group-hover:scale-[1.02]"
                   />
                   <span className="absolute bottom-5 right-4 z-20 inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-foreground/70 transition-colors group-hover:text-primary">
@@ -646,11 +636,7 @@ export default function Home() {
               <AnimatedSection>
                 <Link href={`/events/${featuredUpcomingEvent.slug}`} data-testid="link-home-featured-event" className="group grid overflow-hidden rounded-sm border border-white/10 bg-white/[0.035] outline-none transition-colors hover:border-primary/40 md:grid-cols-[minmax(0,0.42fr)_minmax(0,0.58fr)] focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-[#04040A]">
                   <div data-testid="home-featured-event-image" className="relative aspect-[16/9] overflow-hidden border-b border-white/10 bg-black md:aspect-auto md:min-h-[300px] md:border-b-0 md:border-r">
-                    {featuredUpcomingEvent.data.images?.[0] ? (
-                      <img src={featuredUpcomingEvent.data.images[0]} alt={featuredUpcomingEvent.title} className="absolute inset-0 h-full w-full object-contain object-center opacity-80 transition-opacity duration-700 group-hover:opacity-100" />
-                    ) : (
-                      <div className="absolute inset-0 bg-muted/20" />
-                    )}
+                    <EditorialImage src={featuredUpcomingEvent.data.images?.[0]} alt={featuredUpcomingEvent.title} className="absolute inset-0 h-full w-full object-contain object-center opacity-80 transition-opacity duration-700 group-hover:opacity-100" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent" />
                   </div>
                   <div data-testid="home-featured-event-copy" className="flex flex-col justify-center p-6 md:p-8 lg:p-10">

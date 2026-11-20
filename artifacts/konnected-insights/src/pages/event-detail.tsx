@@ -1,3 +1,4 @@
+import { EditorialImage } from '@/components/editorial-image';
 import React from 'react';
 import { CoverPhoto } from '@/components/cover-photo';
 import { useRoute, Link } from 'wouter';
@@ -160,7 +161,7 @@ export default function EventDetail() {
                       className="relative aspect-video overflow-hidden border border-border bg-card p-2 cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                       aria-label={`Open ${event.title} gallery image ${imageIndex + 2}`}
                     >
-                      <img src={image} alt="" className="h-full w-full object-contain" />
+                      <EditorialImage src={image} alt="" className="h-full w-full object-contain" />
                     </button>
                   </DialogPrimitive.Trigger>
                 ))}
@@ -185,7 +186,7 @@ export default function EventDetail() {
           <DialogPrimitive.Title className="sr-only">Könnected Insights event image</DialogPrimitive.Title>
           {selectedImage && (
             <div className="relative group">
-              <img src={selectedImage} alt="Könnected Insights archive" className="max-h-[86vh] max-w-full object-contain shadow-2xl border border-white/10" />
+              <EditorialImage src={selectedImage} alt="Könnected Insights archive" className="max-h-[86vh] max-w-full object-contain shadow-2xl border border-white/10" />
             </div>
           )}
           <DialogPrimitive.Close asChild>
