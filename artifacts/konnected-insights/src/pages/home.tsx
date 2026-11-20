@@ -61,7 +61,7 @@ export default function Home() {
   const newsletters = newslettersData ?? FALLBACK_DATA.newsletters;
   const masterclasses = masterclassesData ?? FALLBACK_DATA.masterclasses;
   const futureWork = fowData ?? FALLBACK_DATA['future-work'];
-  const contributors = contributorsData ?? FALLBACK_DATA.contributors;
+  const contributors = contributorsData ?? [];
   const communities = communitiesData ?? FALLBACK_DATA.communities;
   const events = eventsData ?? FALLBACK_DATA.events;
   const talks = talksData ?? FALLBACK_DATA.talks;
@@ -495,6 +495,18 @@ export default function Home() {
             </AnimatedSection>
           </div>
 
+          {!coreTeam.length ? (
+            <div data-testid="core-team-empty" className="border-t border-border/60 pt-6">
+              <div aria-hidden="true" className="grid grid-cols-3 gap-3 sm:gap-6">
+                {[0, 1, 2].map(slot => (
+                  <div key={slot} className="flex h-28 items-end justify-center overflow-hidden rounded-sm border border-white/10 bg-gradient-to-t from-[#302938] to-[#19171f] sm:h-52">
+                    <EditorialImage portrait className="h-[82%] w-auto rounded-t-md opacity-75" />
+                  </div>
+                ))}
+              </div>
+              <p className="mt-4 text-sm text-muted-foreground">Core team profiles will appear here.</p>
+            </div>
+          ) : (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-stretch">
             <div className="lg:col-span-7 border-t border-border/60">
               {coreTeam.map((member, index) => {
@@ -562,6 +574,7 @@ export default function Home() {
               )}
             </AnimatedSection>
           </div>
+          )}
         </div>
       </section>
 
